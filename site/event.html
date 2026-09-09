@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="pageTitle">Event | Euphoria</title>
+  <meta name="description" id="pageDesc" content="Event details, rules, and registration for Euphoria '26.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/event.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div id="site-header"></div>
+
+  <main id="main">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="events.html">Events</a> <span>/</span> <span id="crumbName">&hellip;</span>
+      </nav>
+    </div>
+
+    <div id="eventContent"></div>
+
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,30 C150,60 350,0 600,30 C850,60 1050,0 1200,30 L1200,60 L0,60 Z" fill="rgba(201,162,39,0.10)" />
+        <path d="M0,40 C150,15 350,55 600,35 C850,15 1050,55 1200,35 L1200,60 L0,60 Z" fill="rgba(122,42,42,0.14)" />
+      </svg>
+    </div>
+
+    <div class="container" id="notFound" hidden>
+      <div class="not-found">
+        <p class="meta">Not found</p>
+        <h1>That event doesn't exist</h1>
+        <p>It may have been removed, or the link is off. Head back to the full list.</p>
+        <p style="margin-top:1.5rem"><a class="btn btn-primary" href="events.html">Back to all events</a></p>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="js/events-data.js"></script>
+  <script src="js/site.js"></script>
+  <script>
+    renderSiteHeader("events");
+    renderSiteFooter();
+
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+    const ev = slug ? getEuphoriaEvent(slug) : null;
+
+    if (!ev) {
+      document.getElementById("notFound").hidden = false;
+      document.getElementById("crumbName").textContent = "Not found";
+    } else {
+      document.getElementById("pageTitle").textContent = ev.name + " | Euphoria";
+      document.getElementById("pageDesc").setAttribute("content", ev.tagline);
+      document.getElementById("crumbName").textContent = ev.name;
+
+      const categoryLabel = ev.category === "off-stage" ? "Off-stage" : "On-stage";
+      const categoryIcon = ev.category === "off-stage"
+        ? `<svg class="category-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g transform="rotate(45 24 24)"><rect x="21.5" y="4" width="5" height="22" rx="1.2" fill="#c9a227"/><rect x="15" y="24" width="18" height="4.5" rx="1.2" fill="#c9a227"/><rect x="20.5" y="28" width="7" height="11" rx="1.4" fill="#7a2a2a"/><circle cx="24" cy="41.5" r="2.8" fill="#c9a227"/></g></svg>`
+        : `<svg class="category-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24,10 C18,18 18,30 24,38 C30,30 30,18 24,10 Z" stroke="#c9a227" stroke-width="1.4"/><g stroke="#c9a227" stroke-width="1.4"><path d="M22,14 Q14,16 12,22"/><path d="M22,20 Q13,22 11,28"/><path d="M22,26 Q14,29 13,35"/><path d="M26,14 Q34,16 36,22"/><path d="M26,20 Q35,22 37,28"/><path d="M26,26 Q34,29 35,35"/></g></svg>`;
+
+      const rulesHTML = ev.rules.map(r => `<li>${r}</li>`).join("");
+
+      const registerButton = ev.formUrl
+        ? `<a class="btn btn-primary" href="${ev.formUrl}" target="_blank" rel="noopener">Register now</a>`
+        : `<button class="btn btn-primary" disabled title="Registration link coming soon">Registration opening soon</button>`;
+
+      document.getElementById("eventContent").innerHTML = `
+      <div class="container event-hero reveal">
+        <div class="badge-row">
+          ${categoryIcon}
+          <span class="meta">${categoryLabel}</span>
+        </div>
+        <h1>${ev.name}</h1>
+        ${ev.subtitle ? `<p class="event-subtitle">${ev.subtitle}</p>` : ""}
+        <p class="tagline">${ev.tagline}</p>
+      </div>
+
+      <div class="container event-body reveal">
+        <div class="rules-block">
+          <h2>Rules</h2>
+          <ol>${rulesHTML}</ol>
+        </div>
+
+        <aside class="event-sidebar">
+          <dl>
+            <dt>Team</dt>
+            <dd>${ev.team}</dd>
+            ${ev.rounds ? `<dt>Format</dt><dd>${ev.rounds}</dd>` : ""}
+            <dt>Category</dt>
+            <dd>${categoryLabel}</dd>
+          </dl>
+          ${registerButton}
+          <p class="register-note">Only one team per college per event.</p>
+        </aside>
+      </div>
+
+      <div class="container other-events">
+        <h2>More events in ${categoryLabel.toLowerCase()}</h2>
+        <div class="other-events-grid" id="otherEvents"></div>
+      </div>
+    `;
+
+      const others = EUPHORIA_EVENTS.filter(e => e.category === ev.category && e.slug !== ev.slug).slice(0, 6);
+      document.getElementById("otherEvents").innerHTML = others
+        .map(o => `<a href="event.html?slug=${o.slug}">${o.name}</a>`)
+        .join("");
+    }
+  </script>
+</body>
+
+</html>

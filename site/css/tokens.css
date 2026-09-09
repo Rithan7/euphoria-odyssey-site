@@ -1,0 +1,193 @@
+/* ==========================================================================
+   EUPHORIA '26
+   Design tokens. Shared across every page.
+   ========================================================================== */
+
+:root {
+  /* --- Colors from poster: Deep Crimson Red, Blood Red, Sculpted Gold --- */
+  --ink-deep:        #120102;   /* Deep crimson-black page background */
+  --ink-panel:       #240507;   /* Crimson card/panel background */
+  --ink-panel-2:     #3a080c;   /* Raised crimson hover panel */
+  --line-faint:      rgba(229, 193, 88, 0.22); /* Gold hairline dividers */
+
+  --gold:            #e5c158;   /* Sculpted antique gold */
+  --gold-bright:     #f9e4a3;   /* Glowing warm gold */
+  --oxblood:         #8b1014;   /* Deep blood-red accent */
+  --oxblood-bright:  #b5191f;
+
+  --parchment:       #f5ebd7;   /* Warm antique parchment */
+  --parchment-dim:   #d3c2a1;   /* Secondary parchment text */
+  --ink-text:        #2b0406;   /* Dark crimson text on light panels */
+
+  --text-primary:    #faf4e8;   /* Primary body text */
+  --text-muted:      #c7b299;   /* Secondary muted text */
+
+  /* --- Fonts matching poster --- */
+  --font-display: 'Cinzel Decorative', 'Cinzel', serif;
+  --font-title:   'Cinzel', serif;
+  --font-script:  'Alex Brush', 'Great Vibes', cursive;
+  --font-body:    'Lora', serif;
+
+  /* --- Scale --- */
+  --step-1: clamp(2.75rem, 2rem + 3vw, 4.5rem);   /* hero display */
+  --step-2: clamp(2rem, 1.6rem + 1.6vw, 2.75rem); /* section heading */
+  --step-3: clamp(1.4rem, 1.2rem + 0.6vw, 1.75rem); /* card / sub heading */
+  --step-4: 1.125rem;  /* lede / intro paragraph */
+  --step-0: 1rem;      /* body */
+  --step-s: 0.875rem;  /* small / meta */
+
+  /* --- Layout --- */
+  --content-width: 1180px;
+  --line-length:   68ch;
+  --radius:        6px;   /* architectural bronze edge */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 2.75rem;
+  --space-5: 4.5rem;
+  --space-6: 7rem;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--ink-deep);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Deep Crimson Red background with vignette & golden glow */
+body {
+  background-image:
+    radial-gradient(ellipse 1100px 700px at 50% -10%, rgba(139, 16, 20, 0.55), transparent 70%),
+    radial-gradient(ellipse 900px 600px at 50% 90%, rgba(90, 8, 12, 0.45), transparent 60%),
+    radial-gradient(circle at 10% 35%, rgba(139, 16, 20, 0.25), transparent 45%),
+    radial-gradient(circle at 90% 35%, rgba(139, 16, 20, 0.25), transparent 45%),
+    linear-gradient(180deg, #140102 0%, #200305 35%, #180203 70%, #0d0001 100%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  margin: 0;
+  color: var(--parchment);
+  letter-spacing: 0.01em;
+}
+
+p { max-width: var(--line-length); }
+
+a { color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* Focus states — visible everywhere, not just default outline removal */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-title);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.85rem 2.2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--gold);
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, #f9e4a3 0%, #e5c158 50%, #b8860b 100%);
+  color: #1a0203;
+  border-color: var(--gold-bright);
+  box-shadow: 0 4px 18px rgba(229, 193, 88, 0.35), 0 0 10px rgba(0, 0, 0, 0.8);
+}
+.btn-primary:hover {
+  background: linear-gradient(180deg, #ffffff 0%, #f9e4a3 50%, #e5c158 100%);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(249, 228, 163, 0.5);
+}
+
+.btn-ghost {
+  background: rgba(36, 5, 7, 0.8);
+  color: var(--parchment);
+  border-color: var(--line-faint);
+  box-shadow: inset 0 0 12px rgba(139, 16, 20, 0.4);
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold-bright);
+  background: rgba(58, 8, 12, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(139, 16, 20, 0.6), inset 0 0 15px rgba(229, 193, 88, 0.2);
+}
+
+/* --- Eyebrow / meta label (used sparingly, sentence case — not tracked-out caps) --- */
+.meta {
+  font-family: var(--font-display);
+  font-size: var(--step-s);
+  color: var(--gold);
+  letter-spacing: 0.02em;
+}
+
+/* --- Divider: a laurel-adjacent rule, not a plain <hr> --- */
+.rule {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-faint) 20%, var(--line-faint) 80%, transparent);
+  margin: var(--space-4) 0;
+}
+
+/* --- Skip link for keyboard users --- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--gold);
+  color: #1a1310;
+  padding: 0.75rem 1.25rem;
+  z-index: 200;
+  font-family: var(--font-display);
+}
+.skip-link:focus {
+  left: var(--space-2);
+  top: var(--space-2);
+}
