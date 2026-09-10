@@ -65,7 +65,7 @@ function renderSiteFooter() {
       <div class="footer-grid">
         <div>
           <h4>Euphoria 2026</h4>
-          <p>The annual inter-collegiate fest of PSG College of Arts &amp; Science. Presented by Manavar Mandram - SF. Fifteen events, one grand arena.</p>
+          <p>The annual inter-collegiate fest of PSG College of Arts &amp; Science. Presented by Manavar Mandram - SF. Sixteen events, one grand arena.</p>
         </div>
         <div>
           <h4>Find us</h4>
