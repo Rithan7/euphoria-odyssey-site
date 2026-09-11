@@ -334,7 +334,6 @@ const EUPHORIA_EVENTS = [
     formUrl: "https://forms.gle/G4foE75XAwaoq4vf8"
   }
 ];
-
 /* Small helper other pages use to look up one event by slug */
 function getEuphoriaEvent(slug) {
   return EUPHORIA_EVENTS.find(e => e.slug === slug) || null;
