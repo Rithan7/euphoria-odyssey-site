@@ -71,7 +71,7 @@ function renderSiteFooter() {
         <div>
           <h4>Reach us</h4>
           <p><a href="mailto:euphoriammsfpsgcas@gmail.com">euphoriammsfpsgcas@gmail.com</a></p>
-          <p><a href="https://www.instagram.com/euphoria26_psgcas" target="_blank" rel="noopener">Instagram &#8599;</a></p>
+          <p><a href="https://www.instagram.com/euphoria_psgcas/" target="_blank" rel="noopener">Instagram &#8599;</a></p>
         </div>
       </div>
       <div class="footer-bottom">
