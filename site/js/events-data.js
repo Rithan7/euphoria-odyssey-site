@@ -8,6 +8,9 @@
    4 on-stage events. Removed: Business Times, Art Reborn, Voix Verse.
    Renamed: Sketch Scape -> Reborn Stroke (same form link, rules updated).
    Added: NextGen Assembly, Sell the Unsellable, Slice and Style.
+
+   Image update: every event now has its own dedicated banner image at
+   assets/events/<slug>.jpg
    ========================================================================== */
 
 const EUPHORIA_EVENTS = [
@@ -20,7 +23,7 @@ const EUPHORIA_EVENTS = [
     tagline: "A thrilling IPL auction simulation where strategy and smart bidding lead to victory.",
     team: "4 members per team",
     rounds: "2 rounds",
-    image: null,
+    image: "assets/events/hammer-of-11.jpg",
     rules: [
       "Participation: 4 members per team.",
       "During Round 1 (quiz), usage of mobile phones is strictly prohibited and will lead to immediate disqualification of the team.",
@@ -38,7 +41,7 @@ const EUPHORIA_EVENTS = [
     tagline: "A dynamic simulation of the United Nations Assembly where participants represent different nations and engage in diplomatic discussions on global issues.",
     team: "Individual participation",
     rounds: null,
-    image: null,
+    image: "assets/events/nextgen-assembly.jpg",
     rules: [
       "Participation: Individual.",
       "Delegates are expected to be dressed in formals.",
@@ -56,7 +59,7 @@ const EUPHORIA_EVENTS = [
     tagline: "An artistic challenge that transforms creativity and imagination into captivating handmade creations.",
     team: "Individual participation",
     rounds: "2 rounds",
-    image: null,
+    image: "assets/events/reborn-stroke.jpg",
     rules: [
       "Participation: Individual.",
       "The event consists of two rounds. The first round is based on sketching; the second round remains unannounced.",
@@ -77,7 +80,7 @@ const EUPHORIA_EVENTS = [
     tagline: "A battle of knowledge, logic and quick thinking across diverse topics.",
     team: "Individual or 2 members per team",
     rounds: "Prelims + finals",
-    image: null,
+    image: "assets/events/odyssey_of_intellect.jpg.jpeg",
     rules: [
       "Participation: Individual or 2 members per team.",
       "The preliminary round will comprise 20 questions.",
@@ -98,7 +101,7 @@ const EUPHORIA_EVENTS = [
     tagline: "A creative filmmaking challenge where participants bring stories to life on screen.",
     team: "4 members per team",
     rounds: "1-hour window",
-    image: null,
+    image: "assets/events/cinesprint.jpg",
     rules: [
       "Participation: 4 members per team.",
       "Each short film must be of only one minute duration.",
@@ -119,7 +122,7 @@ const EUPHORIA_EVENTS = [
     tagline: "A fun marketing challenge where creativity turns the most unusual ideas into irresistible products.",
     team: "2–4 members per team",
     rounds: null,
-    image: null,
+    image: "assets/events/sell-the-unsellable.jpg",
     rules: [
       "Participation: 2–4 members per team.",
       "Participants will be given a random or unusual product that is difficult to sell.",
@@ -138,7 +141,7 @@ const EUPHORIA_EVENTS = [
     tagline: "A test of creativity and innovation through the power of AI and effective prompting.",
     team: "2 members per team",
     rounds: "3 rounds — Colour Number Challenge, AI or Real?, One-Shot AI Video Challenge",
-    image: null,
+    image: "assets/events/prompt-perfect.jpg",
     rules: [
       "Participation: 2 members per team.",
       "The event consists of 3 rounds: Colour Number Challenge, AI or Real?, One-Shot AI Video Challenge.",
@@ -157,7 +160,7 @@ const EUPHORIA_EVENTS = [
     tagline: "An immersive mystery challenge where participants uncover clues, solve puzzles and crack the case.",
     team: "3 members per team",
     rounds: "3 rounds",
-    image: null,
+    image: "assets/events/quest-unlocked.jpg",
     rules: [
       "Participation: 3 members per team.",
       "Usage of mobile phones is strictly prohibited.",
@@ -175,7 +178,7 @@ const EUPHORIA_EVENTS = [
     tagline: "A creative culinary challenge combining precision, presentation and artistic flair.",
     team: "2 members per team",
     rounds: null,
-    image: null,
+    image: "assets/events/slice_and_style.jpg.jpeg",
     rules: [
       "Participation: 2 members per team.",
       "Culinary equipment, fruits and vegetables must be brought by the participants.",
@@ -196,7 +199,7 @@ const EUPHORIA_EVENTS = [
     tagline: "A celebration of cinema that challenges participants to put their movie knowledge and instincts to the test.",
     team: "3 members per team",
     rounds: "3 rounds",
-    image: null,
+    image: "assets/events/padam-puthir.jpg",
     rules: [
       "Participation: 3 members per team.",
       "Usage of mobile phones during the event is strictly prohibited and will lead to disqualification of the team.",
@@ -215,7 +218,7 @@ const EUPHORIA_EVENTS = [
     tagline: "Three rounds. One goal each. Clear it, or you're out.",
     team: "2–3 members per team",
     rounds: "3 rounds — Gold Quest, Balance Scale, Red Light Green Light",
-    image: null,
+    image: "assets/events/squid-game.jpg",
     rules: [
       "Participation: 2–3 members per team.",
       "Each round has a unique goal, and players must understand the rules and conditions to successfully clear it.",
@@ -237,7 +240,7 @@ const EUPHORIA_EVENTS = [
     tagline: "A celebration of Tamil language, culture, heritage and creativity.",
     team: "2 members per team",
     rounds: null,
-    image: null,
+    image: "assets/events/senthamizh-sangamam.jpg",
     rules: [
       "Participation: 2 members per team.",
       "Participants must be able to read and write in Tamil.",
@@ -257,7 +260,7 @@ const EUPHORIA_EVENTS = [
     tagline: "One performer, one spotlight, full command of the stage.",
     team: "Individual participation",
     rounds: null,
-    image: null,
+    image: "assets/events/rhythm-rebel.jpg",
     rules: [
       "Participation: Individual.",
       "Duration: 3-4 minutes.",
@@ -278,7 +281,7 @@ const EUPHORIA_EVENTS = [
     tagline: "Bring the whole crew — synchronised energy, one performance.",
     team: "2–8 members per team",
     rounds: null,
-    image: null,
+    image: "assets/events/beat-brigade.jpg",
     rules: [
       "Participation: 2-8 members per team.",
       "Only pen drive is allowed.",
@@ -299,7 +302,7 @@ const EUPHORIA_EVENTS = [
     tagline: "The music plays on the spot — you adapt, live, in front of everyone.",
     team: "Individual participation",
     rounds: null,
-    image: null,
+    image: "assets/events/stage-symphony.jpg",
     rules: [
       "Participation: Individual.",
       "Participants have to dance adapting to the songs played on the spot.",
@@ -317,7 +320,7 @@ const EUPHORIA_EVENTS = [
     tagline: "A full band performance — your sound, your stage.",
     team: "Individual or team of 2–8 members",
     rounds: null,
-    image: null,
+    image: "assets/events/talent-fiesta.jpg",
     rules: [
       "Participation: Individual, or a team of 2-8 members.",
       "Band performance is to be performed.",
@@ -334,6 +337,7 @@ const EUPHORIA_EVENTS = [
     formUrl: "https://forms.gle/G4foE75XAwaoq4vf8"
   }
 ];
+
 /* Small helper other pages use to look up one event by slug */
 function getEuphoriaEvent(slug) {
   return EUPHORIA_EVENTS.find(e => e.slug === slug) || null;

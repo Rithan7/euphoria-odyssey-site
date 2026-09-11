@@ -86,6 +86,7 @@
         <h1>${ev.name}</h1>
         ${ev.subtitle ? `<p class="event-subtitle">${ev.subtitle}</p>` : ""}
         <p class="tagline">${ev.tagline}</p>
+        ${ev.image ? `<div class="event-banner-box"><img src="${ev.image}" alt="${ev.name}" class="event-banner-img"></div>` : ""}
       </div>
 
       <div class="container event-body reveal">
