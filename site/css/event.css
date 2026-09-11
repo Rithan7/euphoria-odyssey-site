@@ -110,8 +110,14 @@
 .other-events-grid a:hover { border-color: var(--gold); color: var(--gold-bright); }
 
 @media (max-width: 860px) {
-  .event-body { grid-template-columns: 1fr; }
+  .event-body { grid-template-columns: 1fr; gap: var(--space-4); }
   .event-sidebar { position: static; }
+}
+
+@media (max-width: 600px) {
+  .event-hero h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); }
+  .other-events-grid { grid-template-columns: 1fr; }
+  .rules-block ol { padding-left: 1.1rem; }
 }
 
 .not-found {

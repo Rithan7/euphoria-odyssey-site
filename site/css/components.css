@@ -187,52 +187,115 @@
 
 .nav-toggle {
   display: none;
-  background: transparent;
-  border: 1px solid var(--line-faint);
-  color: var(--parchment);
+  background: var(--ink-panel);
+  border: 1px solid var(--gold);
+  color: var(--gold-bright);
   border-radius: var(--radius);
-  padding: 0.5rem 0.7rem;
-  font-size: 1.2rem;
+  padding: 0.6rem 1rem;
+  font-size: 1.3rem;
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  transition: all 0.25s ease;
+}
+
+.nav-toggle:hover {
+  background: var(--oxblood);
+  color: #ffffff;
 }
 
 @media (max-width: 760px) {
+  .site-header .container.header-container {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    gap: 0.5rem;
+  }
+
   .header-branding {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.75rem;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .college-title {
+    font-size: clamp(0.78rem, 3.2vw, 1.25rem);
+    letter-spacing: 0.04em;
   }
 
   .header-logo-left img {
-    height: 54px;
+    height: clamp(38px, 9vw, 54px);
+  }
+
+  .header-logos-right {
+    gap: 0.5rem;
   }
 
   .header-logo-right img {
-    height: 50px;
+    height: clamp(36px, 8.5vw, 48px);
   }
 
   .header-logo-right.centenary img {
-    height: 42px;
+    height: clamp(28px, 7vw, 40px);
   }
 
   .nav-toggle {
-    display: block;
-    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.25rem;
+    align-self: center;
   }
 
   .site-nav {
     display: none;
     width: 100%;
+    background: rgba(18, 1, 2, 0.98);
+    border: 1px solid var(--line-faint);
+    border-radius: var(--radius);
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.95);
   }
 
   .site-nav.open {
     display: block;
+    animation: fadeInDown 0.3s ease;
   }
 
   .site-nav ul {
     flex-direction: column;
-    gap: var(--space-2);
-    padding: var(--space-2) 0;
+    gap: 0;
+    padding: 0;
+  }
+
+  .site-nav a {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.05rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(229, 193, 88, 0.1);
+  }
+
+  .site-nav li:last-child a {
+    border-bottom: none;
+  }
+
+  .site-nav a::after {
+    display: none;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

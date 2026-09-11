@@ -104,6 +104,18 @@ img { max-width: 100%; display: block; }
   padding: 0 var(--space-3);
 }
 
+@media (max-width: 600px) {
+  :root {
+    --space-3: 1rem;
+    --space-4: 1.75rem;
+    --space-5: 2.75rem;
+    --space-6: 4rem;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 /* Focus states — visible everywhere, not just default outline removal */
 a:focus-visible,
 button:focus-visible,
