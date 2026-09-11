@@ -1,7 +1,7 @@
 /* --- Hero --- */
 .hero {
   position: relative;
-  padding: var(--space-5) 0 var(--space-5);
+  padding: 1.25rem 0 var(--space-4);
   overflow: hidden;
 }
 .hero::before {
@@ -39,31 +39,29 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.2rem;
   text-align: center;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 10px rgba(229, 193, 88, 0.4);
 }
 
-.hero-presenter {
+.hero-mandram {
   font-family: var(--font-title);
-  font-size: clamp(1.15rem, 2.2vw, 1.55rem);
+  font-size: clamp(1.15rem, 2.3vw, 1.65rem);
   font-weight: 800;
-  color: var(--gold);
+  color: var(--gold-bright);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin: 0.2rem 0 0.6rem;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 12px rgba(229, 193, 88, 0.4);
+  margin: 0.1rem 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 12px rgba(229, 193, 88, 0.45);
 }
 
-.hero-presenter .presents-tag {
+.hero-presents {
   font-family: var(--font-script);
-  font-size: 1.35em;
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
   color: var(--gold-bright);
-  text-transform: none;
-  font-weight: normal;
-  margin-left: 0.5rem;
-  vertical-align: middle;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9), 0 0 10px rgba(249, 228, 163, 0.5);
+  line-height: 1;
+  margin: 0.05rem 0 0.4rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 0 14px rgba(249, 228, 163, 0.55);
 }
 
 /* --- Hero Grand Logo with Glow & Float Animations --- */

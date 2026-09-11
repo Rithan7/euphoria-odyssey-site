@@ -27,8 +27,6 @@ function renderSiteHeader(activePage) {
         
         <a class="brand-center" href="index.html">
           <span class="college-title">PSG COLLEGE OF ARTS &amp; SCIENCE</span>
-          <span class="mandram-subtitle">Manavar Mandram - SF</span>
-          <span class="presents-script">Presents</span>
         </a>
 
         <div class="header-logos-right">
