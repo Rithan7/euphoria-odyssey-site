@@ -29,7 +29,6 @@ function renderSiteHeader(activePage) {
           <span class="college-title">PSG COLLEGE OF ARTS &amp; SCIENCE</span>
           <span class="mandram-subtitle">Manavar Mandram - SF</span>
           <span class="presents-script">Presents</span>
-          <span class="fest-title">EUPHORIA 2026</span>
         </a>
 
         <div class="header-logos-right">
