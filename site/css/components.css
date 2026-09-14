@@ -75,10 +75,6 @@
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.header-logo-right.centenary img {
-  height: 60px;
-}
-
 .header-logo-right:hover img {
   transform: translateY(-2px) scale(1.06);
   filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 18px rgba(249, 228, 163, 0.6));
@@ -237,10 +233,6 @@
     height: clamp(36px, 8.5vw, 48px);
   }
 
-  .header-logo-right.centenary img {
-    height: clamp(28px, 7vw, 40px);
-  }
-
   .nav-toggle {
     display: flex;
     align-items: center;
@@ -293,6 +285,7 @@
     opacity: 0;
     transform: translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

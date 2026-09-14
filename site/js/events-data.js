@@ -9,6 +9,18 @@
    Renamed: Sketch Scape -> Reborn Stroke (same form link, rules updated).
    Added: NextGen Assembly, Sell the Unsellable, Slice and Style.
 
+   Revision 2 (against euphoria_rule_book_final_confirm(1).docx):
+   - Reborn Stroke: rules rewritten to match confirmed book (participants
+     bring their own craft/waste materials, made entirely on the spot,
+     no downloaded/printed designs); team size corrected to
+     "Individual or 2 per team"; subtitle -> "Art and craft".
+   - Sell the Unsellable: team size corrected from 2–4 to 3–4 per team;
+     removed a "props allowed" rule not present in the confirmed book.
+   - Squid Game: removed invented round names (Gold Quest / Balance Scale /
+     Red Light Green Light) and extra rules not in the confirmed book;
+     tagline and rules now match the book exactly (3 rounds, discipline,
+     no phones/smartwatches, follow time limit).
+
    Image update: every event now has its own dedicated banner image at
    assets/events/<slug>.jpg
    ========================================================================== */
@@ -55,20 +67,18 @@ const EUPHORIA_EVENTS = [
     slug: "reborn-stroke",
     category: "off-stage",
     name: "Reborn Stroke",
-    subtitle: "Art",
-    tagline: "An artistic challenge that transforms creativity and imagination into captivating handmade creations.",
-    team: "Individual participation",
-    rounds: "2 rounds",
+    subtitle: "Art and craft",
+    tagline: "An artistic challenge that transforms creativity and imagination into captivating handmade creations from unused materials.",
+    team: "Individual or 2 members per team",
+    rounds: null,
     image: "assets/events/reborn-stroke.jpg",
     rules: [
-      "Participation: Individual.",
-      "The event consists of two rounds. The first round is based on sketching; the second round remains unannounced.",
-      "Stationery allowed: pencil, colour pencil, crayons, water colour and acrylic paints.",
-      "Participants must bring all required materials and stationery, and complete their work within the allotted time. A3 and A4 sheets will be provided.",
-      "All creations must be original and prepared entirely during the competition; ready-made or semi-finished works are not permitted.",
-      "Participants must strictly follow the instructions given by the event coordinators and judges.",
-      "Mobile phones, smartwatches and other electronic devices are strictly prohibited during the competition.",
-      "Any form of misconduct may lead to disqualification."
+      "Participation: Individual or 2 members per team.",
+      "Participants must bring their own basic craft material, waste material, tools, stationery and paints required for the competition.",
+      "The craft/model must be made completely during the competition.",
+      "Participants are encouraged to use innovative ideas and unconventional/waste materials.",
+      "Using a downloaded or printed design as the main craft is not allowed.",
+      "Crafts/models submitted after the allotted time may be subject to disqualification."
     ],
     formUrl: "https://forms.gle/VSBTLNMSiU5tmCgw9"
   },
@@ -120,15 +130,14 @@ const EUPHORIA_EVENTS = [
     name: "Sell The Unsellable",
     subtitle: "Marketing pitch",
     tagline: "A fun marketing challenge where creativity turns the most unusual ideas into irresistible products.",
-    team: "2–4 members per team",
+    team: "3–4 members per team",
     rounds: null,
     image: "assets/events/sell-the-unsellable.jpg",
     rules: [
-      "Participation: 2–4 members per team.",
+      "Participation: 3–4 members per team.",
       "Participants will be given a random or unusual product that is difficult to sell.",
       "Each participant/team must create a creative sales pitch to convince the judges/customers to buy it.",
       "Participants must use original ideas; plagiarism or copying an existing idea is not allowed.",
-      "Props and simple presentation materials are allowed, subject to the guidelines.",
       "Evaluation will be based on Creativity & Innovation."
     ],
     formUrl: "https://forms.gle/1kydoxW5ornRmF8SA"
@@ -215,20 +224,16 @@ const EUPHORIA_EVENTS = [
     category: "off-stage",
     name: "Squid Game",
     subtitle: null,
-    tagline: "Three rounds. One goal each. Clear it, or you're out.",
+    tagline: "A thrilling test of strategy, teamwork and quick decision-making through a series of challenges.",
     team: "2–3 members per team",
-    rounds: "3 rounds — Gold Quest, Balance Scale, Red Light Green Light",
+    rounds: "3 rounds",
     image: "assets/events/squid-game.jpg",
     rules: [
       "Participation: 2–3 members per team.",
-      "Each round has a unique goal, and players must understand the rules and conditions to successfully clear it.",
-      "The game consists of three rounds: Gold Quest, Balance Scale, Red Light Green Light.",
-      "Every action or decision may lead to rewards, penalties, loss of points, or elimination, depending on the round.",
-      "Successfully complete each round and fulfil its conditions to remain in the game and progress further.",
-      "Each challenge must be completed within the given time limit, with no extra time provided.",
-      "Mobile phones, smartwatches, and other electronic devices are not permitted during the challenges.",
-      "Any form of misconduct may lead to disqualification.",
-      "Participants must maintain discipline, sportsmanship, and respectful behaviour throughout the event."
+      "The game consists of 3 rounds.",
+      "All participants must maintain discipline throughout the game.",
+      "Mobile phones and smartwatches are not allowed.",
+      "Follow the given time limit."
     ],
     formUrl: "https://forms.gle/GMnHCQiurP2FZNSy8"
   },
